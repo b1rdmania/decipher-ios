@@ -1,0 +1,73 @@
+{
+  "configs": {
+    "Debug": "debug",
+    "Release": "release"
+  },
+  "name": "Decipher",
+  "options": {
+    "groupSortPosition": "bottom",
+    "transitivelyLinkDependencies": false
+  },
+  "settings": {
+    "CODE_SIGN_IDENTITY": "-"
+  },
+  "packages": {
+    "Privy": {
+      "url": "https://github.com/privy-io/privy-ios",
+      "from": "2.12.0"
+    },
+    "LiveKit": {
+      "url": "https://github.com/livekit/client-sdk-swift",
+      "from": "2.15.1"
+    }
+  },
+  "targets": {
+    "Decipher": {
+      "deploymentTarget": "17.0",
+      "info": {
+        "path": "App/Info.plist",
+        "properties": {
+          "CFBundleDisplayName": "Decipher",
+          "CFBundleShortVersionString": "1.0",
+          "CFBundleVersion": "1",
+          "ITSAppUsesNonExemptEncryption": false,
+          "NSMicrophoneUsageDescription": "Decipher uses your microphone so you can speak with the AI conversation partner during voice practice.",
+          "UIBackgroundModes": [
+            "audio"
+          ],
+          "UILaunchScreen": {},
+          "UISupportedInterfaceOrientations": [
+            "UIInterfaceOrientationPortrait"
+          ]
+        }
+      },
+      "platform": "iOS",
+      "settings": {
+        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
+        "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor",
+        "CURRENT_PROJECT_VERSION": "1",
+        "MARKETING_VERSION": "1.0",
+        "PRODUCT_BUNDLE_IDENTIFIER": "com.birdmania.decipher",
+        "PRODUCT_NAME": "$(TARGET_NAME)",
+        "SWIFT_VERSION": "5.0",
+        "TARGETED_DEVICE_FAMILY": "1"
+      },
+      "sources": [
+        {
+          "path": "App"
+        }
+      ],
+      "dependencies": [
+        {
+          "package": "Privy",
+          "product": "Privy"
+        },
+        {
+          "package": "LiveKit",
+          "product": "LiveKit"
+        }
+      ],
+      "type": "application"
+    }
+  }
+}
