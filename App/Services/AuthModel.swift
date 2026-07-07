@@ -27,7 +27,8 @@ final class AuthModel {
     init() {
         let config = PrivyConfig(
             appId: AppConfig.privyAppID,
-            appClientId: AppConfig.privyClientID
+            appClientId: AppConfig.privyClientID,
+            loggingConfig: .init(logLevel: .verbose)
         )
         privy = PrivySdk.initialize(config: config)
         observeAuthState()
@@ -74,6 +75,7 @@ final class AuthModel {
             pendingEmail = trimmed
             phase = .awaitingCode
         } catch {
+            print("[Privy] sendCode error: \(error) — \(error.localizedDescription)")
             errorMessage = "Couldn't send the code. Check the address and try again."
         }
     }
