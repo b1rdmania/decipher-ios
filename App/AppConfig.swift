@@ -2,12 +2,12 @@ import Foundation
 
 /// App-wide configuration constants.
 ///
-/// The Privy app/client IDs identify this app to Privy's auth service. Replace
-/// the placeholders with the real values from the Privy dashboard for the
-/// Decipher project before shipping — login will fail until they are set.
+/// The Privy app/client IDs identify this app to Privy's auth service. These
+/// are public identifiers (shipped in the binary), not secrets — the same Privy
+/// app as the web client, plus the registered iOS mobile client.
 enum AppConfig {
-    static let privyAppID = "REPLACE_WITH_PRIVY_APP_ID"
-    static let privyClientID = "REPLACE_WITH_PRIVY_CLIENT_ID"
+    static let privyAppID = "cmnxhpxgr00e90cl1rvabmnna"
+    static let privyClientID = "client-WY6XqEfhAUrwHGmSdyYuDA2XccqnraVKxh5Dx2pr5GcXz"
 
     /// True once real Privy credentials have been filled in.
     static var isPrivyConfigured: Bool {
